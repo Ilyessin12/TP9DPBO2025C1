@@ -1,6 +1,6 @@
 <?php
 
-include("view/TampilMahasiswa.php");
+include(__DIR__. "../view/TampilMahasiswa.php");
 
 $tp = new TampilMahasiswa();
 $prosesmahasiswa = new ProsesMahasiswa();

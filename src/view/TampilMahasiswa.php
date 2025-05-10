@@ -2,7 +2,7 @@
 
 
 include("KontrakView.php");
-include("presenter/ProsesMahasiswa.php");
+include(__DIR__. "../presenter/ProsesMahasiswa.php");
 
 class TampilMahasiswa implements KontrakView
 {
