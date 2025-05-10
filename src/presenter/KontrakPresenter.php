@@ -1,9 +1,9 @@
 <?php
 
-include(__DIR__. "../model/Template.class.php");
-include(__DIR__. "../model/DB.class.php");
-include(__DIR__. "../model/Mahasiswa.class.php");
-include(__DIR__. "../model/TabelMahasiswa.class.php");
+include(__DIR__. "/../model/Template.class.php");
+include(__DIR__. "/../model/DB.class.php");
+include(__DIR__. "/../model/Mahasiswa.class.php");
+include(__DIR__. "/../model/TabelMahasiswa.class.php");
 
 // Interface atau gambaran dari presenter akan seperti apa
 interface KontrakPresenter
