@@ -1,9 +1,5 @@
 <?php
 
-/******************************************
- Asisten Pemrogaman 13 & 14
-******************************************/
-
 // Kelas yang berisikan tabel dari mahasiswa
 class TabelMahasiswa extends DB
 {

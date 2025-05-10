@@ -1,19 +1,7 @@
 <?php
 
-/******************************************
- Asisten Pemrogaman 13 & 14
-******************************************/
-
 class DB
 {
-	/*
-	var $db_host = ''; // host
-	var $db_user = ''; // user basis data
-	var $db_password = ''; // password
-	var $db_name = ''; // nama basis data
-	var $db_link = ''; // nama basis data
-	var $result = 0;
-	*/
 
 	var $db_host = 'localhost'; // host
 	var $db_user = 'root'; // user basis data

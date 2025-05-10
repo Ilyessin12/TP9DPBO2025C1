@@ -1,8 +1,5 @@
 <?php
 
-/******************************************
- Asisten Pemrogaman 13 & 14
-******************************************/
 
 // Kelas yang menggambarkan detail sebuah mahasiswa dengan atribut-atributnya
 class Mahasiswa

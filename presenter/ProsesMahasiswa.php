@@ -2,10 +2,6 @@
 
 include("KontrakPresenter.php");
 
-/******************************************
- Asisten Pemrogaman 13 & 14
-******************************************/
-
 class ProsesMahasiswa implements KontrakPresenter
 {
 	private $tabelmahasiswa;
