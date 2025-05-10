@@ -13,8 +13,10 @@ class Mahasiswa
 	var $tempat = '';
 	var $tl = '';
 	var $gender = '';
+	var $email = '';
+	var $telp = '';
 
-	function __construct($id = '', $nim = '', $nama = '', $tempat = '', $tl = '', $gender = '')
+	function __construct($id = '', $nim = '', $nama = '', $tempat = '', $tl = '', $gender = '', $email = '', $telp = '')
 	{
 		$this->id = $id;
 		$this->nim = $nim;
@@ -22,6 +24,8 @@ class Mahasiswa
 		$this->tempat = $tempat;
 		$this->tl = $tl;
 		$this->gender = $gender;
+		$this->email = $email;
+		$this->telp = $telp;
 	}
 
 	function setId($id)
@@ -48,6 +52,14 @@ class Mahasiswa
 	{
 		$this->gender = $gender;
 	}
+	function setEmail($email)
+	{
+		$this->email = $email;
+	}
+	function setTelp($telp)
+	{
+		$this->telp = $telp;
+	}
 
 	function getId()
 	{
@@ -72,5 +84,13 @@ class Mahasiswa
 	function getGender()
 	{
 		return $this->gender;
+	}
+	function getEmail()
+	{
+		return $this->email;
+	}
+	function getTelp()
+	{
+		return $this->telp;
 	}
 }
