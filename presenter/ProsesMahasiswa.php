@@ -42,6 +42,8 @@ class ProsesMahasiswa implements KontrakPresenter
 				$mahasiswa->setTempat($row['tempat']); // mengisi tempat
 				$mahasiswa->setTl($row['tl']); // mengisi tl
 				$mahasiswa->setGender($row['gender']); // mengisi gender
+				$mahasiswa->setEmail($row['email']); // mengisi email
+				$mahasiswa->setTelp($row['telp']); // mengisi telp
 
 				$this->data[] = $mahasiswa; // tambahkan data mahasiswa ke dalam list
 			}
@@ -52,6 +54,72 @@ class ProsesMahasiswa implements KontrakPresenter
 			echo "yah error part 2" . $e->getMessage();
 		}
 	}
+
+	function getDataById($id)
+	{
+		try {
+			// mengambil data mahasiswa berdasarkan id
+			$this->tabelmahasiswa->open();
+			$this->tabelmahasiswa->getMahasiswaById($id);
+			$data = null;
+
+			while ($row = $this->tabelmahasiswa->getResult()) {
+				$data = $row;
+			}
+
+			$this->tabelmahasiswa->close();
+			return $data;
+		} catch (Exception $e) {
+			echo "Error: " . $e->getMessage();
+			return null;
+		}
+	}
+
+	function add($nim, $nama, $tempat, $tl, $gender, $email, $telp)
+	{
+		try {
+			// menambah data mahasiswa
+			$this->tabelmahasiswa->open();
+			$this->tabelmahasiswa->addMahasiswa($nim, $nama, $tempat, $tl, $gender, $email, $telp);
+			$this->tabelmahasiswa->close();
+
+			return true;
+		} catch (Exception $e) {
+			echo "Error: " . $e->getMessage();
+			return false;
+		}
+	}
+
+	function update($id, $nim, $nama, $tempat, $tl, $gender, $email, $telp)
+	{
+		try {
+			// mengupdate data mahasiswa
+			$this->tabelmahasiswa->open();
+			$this->tabelmahasiswa->updateMahasiswa($id, $nim, $nama, $tempat, $tl, $gender, $email, $telp);
+			$this->tabelmahasiswa->close();
+
+			return true;
+		} catch (Exception $e) {
+			echo "Error: " . $e->getMessage();
+			return false;
+		}
+	}
+
+	function delete($id)
+	{
+		try {
+			// menghapus data mahasiswa
+			$this->tabelmahasiswa->open();
+			$this->tabelmahasiswa->deleteMahasiswa($id);
+			$this->tabelmahasiswa->close();
+
+			return true;
+		} catch (Exception $e) {
+			echo "Error: " . $e->getMessage();
+			return false;
+		}
+	}
+
 	function getId($i)
 	{
 		// mengembalikan id mahasiswa dengan indeks ke i
@@ -81,6 +149,16 @@ class ProsesMahasiswa implements KontrakPresenter
 	{
 		// mengembalikan gender mahasiswa dengan indeks ke i
 		return $this->data[$i]->gender;
+	}
+	function getEmail($i)
+	{
+		// mengembalikan email mahasiswa dengan indeks ke i
+		return $this->data[$i]->email;
+	}
+	function getTelp($i)
+	{
+		// mengembalikan telepon mahasiswa dengan indeks ke i
+		return $this->data[$i]->telp;
 	}
 	function getSize()
 	{
